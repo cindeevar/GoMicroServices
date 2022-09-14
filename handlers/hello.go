@@ -1,3 +1,4 @@
+// implementing the service through http handler
 package handlers
 
 import (
@@ -8,19 +9,26 @@ import (
 )
 
 type Hello struct {
+	l *log.Logger
+}
+
+// adding logger as dependent object
+func NewHello(l *log.Logger) *Hello {
+	return &Hello{l}
 }
 
 func (h *Hello) ServeHttp(w http.ResponseWriter, r *http.Request) {
-	log.Println("Hello World")
+
+	h.l.Println("Hello World")
 
 	d, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
-		http.Error(w, "oops", http.StatusBadRequest)
+		http.Error(w, "Oops error occurred", http.StatusBadRequest)
 		return
 	}
 
-	log.Printf("Data %s \n", d)
+	h.l.Printf("Data %s \n", d)
 
 	fmt.Fprintf(w, "Hello %s", d)
 }
