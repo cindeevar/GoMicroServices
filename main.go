@@ -4,6 +4,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/cindeevar/GoMicroServices/handlers"
 )
 
 func main() {
