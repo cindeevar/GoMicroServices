@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/cindeevar/GoMicroServices/tree/main/handlers"
+	"github.com/cindeevar/GoMicroServices/handlers"
 )
 
 func main() {
@@ -18,5 +18,5 @@ func main() {
 
 	sm.Handle("/", hh)
 
-	http.ListenAndServe(":9090", nil)
+	http.ListenAndServe(":9090", sm)
 }

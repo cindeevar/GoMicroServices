@@ -1,9 +1,9 @@
-module github.com/cindeevar/GoMicroServices/product-api
+module github.com/cindeevar/GoMicroServices
 
 go 1.13
 
 require (
-	github.com/PacktPublishing/Building-Microservices-with-Go-Second-Edition/product-api v0.0.0-20200205074745-5ec21a886558
+	
 	github.com/go-openapi/errors v0.19.2
 	github.com/go-openapi/runtime v0.19.11
 	github.com/go-openapi/strfmt v0.19.3
